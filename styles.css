@@ -96,6 +96,10 @@ option {
     padding: 1em;
     height: 10vh;
     text-align: center;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    font-family: inherit;
 }
 
 .hex-value:hover {
@@ -103,11 +107,89 @@ option {
     background-color: rgba(207, 206, 206, 0.816);
 }
 
+/* show hide copied text */
+
+.showCopied, .hideCopied {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--dark-green);
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    height: 2em;
+    margin: 1em auto 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+    
+.showCopied > p {
+    margin: 0;
+    font-weight: 700;
+    color: var(--light-green);
+    font-size: 1rem;
+    color: var(--whitish);
+    display: flex;
+}
+
+.hideCopied {
+    visibility: hidden;
+}
+
+.copiedExitBtn {
+    cursor: pointer;
+}
+
+
 /* Media Query for bigger screens */
 
 @media screen and (min-width: 900px) {
     .container {
         width: 90vw;
         margin: auto;
+    }
+}
+
+
+/* Media query for mobile screen */
+
+@media screen and (max-width: 550px) {
+    .color-scheme-selector {
+        height: 10vh;
+    }
+    
+    #seed-color {
+        padding: 0;
+        border: none;
+        width: 3em;
+        height: 2.8em;
+    }
+    
+    #color-picker {
+        height: 2em;
+        font-size: 0.85rem;
+        padding: 3px;
+    }
+    
+    #btn {
+        padding: 0.6em 0.6em;
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+
+    .hex-value {
+        padding: 0.5em;
+        height: 10vh;
+        font-size: 0.8rem;
+    }
+
+    .showCopied, .hideCopied {
+        width: 150px;
+        height: 1.90em;
+    }
+      
+
+    .showCopied > p {
+        font-size: 0.8rem;
     }
 }
